@@ -6,7 +6,6 @@
       "diff": false,
       "page": 1,
       "line": 1,
-      "divide": false,
       "sequence": 1
     },
     {
@@ -16,7 +15,6 @@
       "diff": false,
       "page": 1,
       "line": 1,
-      "divide": false,
       "sequence": 2
     },
     {
@@ -26,7 +24,6 @@
       "diff": false,
       "page": 1,
       "line": 1,
-      "divide": false,
       "sequence": 3
     },
     {
@@ -89,7 +86,7 @@
       "id": "9",
       "diff": false,
       "page": 1,
-      "line": 2,
+      "line": 3,
       "sequence": 2
     },
     {
@@ -102,4 +99,4 @@
       "sequence": 3
     }
   ]
-  
+ 
