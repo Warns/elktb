@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import WordBox from "./WordBox";
 import jsonData from "../data/data.json";
 
@@ -20,52 +20,31 @@ const WordsComponent = () => {
   };
 
   const wordsLineStyles = {
+    display: "flex",     // Apply Flexbox to arrange words side by side
     border: "1px solid red",
   };
 
-  const renderWordBoxes = () => {
-    let currentLine = -1;
-    let lineContainer = null;
-    let lines = [];
+  const [lines, setLines] = useState([]);
 
-    return jsonData.map((wordData) => {
-      /*
-      if(currentLine !== wordData.line){
-        lineContainer = document.createElement("div");
-        lines.push(lineContainer);
-        currentLine = wordData.line;
-      }
+  jsonData.forEach((wordData) => {
+    const lineIndex = wordData.line - 1;
 
-      lines[currentLine-1].appendChild(<WordBox text={wordData.text} />);
-      */
+    if (!lines[lineIndex]) {
+      lines[lineIndex] = [];
+    }
 
-      if (currentLine !== wordData.line) {
-        currentLine = wordData.line;
-        lineContainer = (
-          <div key={`line_${currentLine}`} style={wordsLineStyles}>
-            Line {currentLine}: {/* Display line number */}
-            <WordBox text={wordData.text} />
-          </div>
-        );
-      }
-
-      const boxProps = {
-        key: wordData.id,
-        word: wordData,
-      };
-
-      return (
-        <>
-          {lineContainer}
-          <WordBox {...boxProps} />
-        </>
-      );
-    });
-  };
+    lines[lineIndex].push(<WordBox key={wordData.id} text={wordData.script} />);
+  });
 
   return (
     <div className="side" style={wordsContainerStyles}>
-      <div style={wordsContentStyles}>{renderWordBoxes()}</div>
+      <div style={wordsContentStyles}>
+        {lines.map((line, index) => (
+          <div key={index} style={wordsLineStyles}>
+            {line}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
