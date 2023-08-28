@@ -22,6 +22,8 @@ const WordsComponent = () => {
   const wordsLineStyles = {
     display: "flex",     // Apply Flexbox to arrange words side by side
     border: "1px solid red",
+    justifyContent: "flex-end", // Align contents to the right
+
   };
 
   const [lines, setLines] = useState([]);
@@ -41,7 +43,7 @@ const WordsComponent = () => {
       <div style={wordsContentStyles}>
         {lines.map((line, index) => (
           <div key={index} style={wordsLineStyles}>
-            {line}
+            {line.reverse()}
           </div>
         ))}
       </div>
