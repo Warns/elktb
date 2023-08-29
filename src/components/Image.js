@@ -19,7 +19,7 @@ const Image = () => {
   };
   return (
     <div className="side" style={imageContainerStyles}>
-      <img src={yourImage} alt="Your Image" style={imageStyles} />
+      <img src={yourImage} alt="" style={imageStyles} />
     </div>
   );
 };
