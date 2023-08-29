@@ -1,19 +1,22 @@
 // App.js
 import React from "react";
 import "./App.css";
-import HeaderComponent from "./components/HeaderComponent";
-import ImageComponent from "./components/ImageComponent";
-import WordsComponent from "./components/WordsComponent";
+import Header from "./components/Header";
+import Image from "./components/Image";
+import WordsGrid from "./components/WordsGrid";
+import TopPanel from "./components/TopPanel";
 
 function App() {
   return (
     <div className="App">
-      <HeaderComponent />
+      <Header />
       <div className="wrapper">
-        <div className="panel">Panel TBA</div>
+        <div className="top-panel">
+          <TopPanel />
+        </div>
         <div className="content-container">
-          <ImageComponent />
-          <WordsComponent />
+          <Image />
+          <WordsGrid />
         </div>
       </div>
     </div>

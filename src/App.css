@@ -1,4 +1,8 @@
-/* App.css */
+@font-face {
+  font-family: "MushafFont"; /* Give your font a name */
+  src: url("/src/assets/fonts/_8MushafFontu-Regular.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,10 +20,6 @@ header {
   width: calc(100vw - 80px);
 }
 
-.panel {
-  min-height: 80px;
-}
-
 .content-container {
   display: flex;
 }
@@ -27,4 +27,88 @@ header {
 .content-container .side {
   width: 100%;
   flex: 1;
+}
+
+/* WordsComponent */
+.words-container {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0px 4px 4px 0px;
+  border-right: 30px solid #eceae8;
+}
+
+.words-content {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+.line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 9px;
+  margin-bottom: 10px;
+}
+
+.script-text {
+  color: #7c7e83;
+  text-align: center;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-family: _8MushafFontu-Regular, sans-serif;
+}
+
+/* WordBox */
+.word-box {
+  width: 68px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #c0bcb4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c0bcb4;
+}
+
+.word-input {
+  width: 70%;
+  border: none;
+  outline: none;
+  text-align: center;
+  background: #c0bcb4;
+}
+
+.input-styles {
+  width: 70%;
+  border: none;
+  outline: none;
+  text-align: center;
+  background: #C0BCB4;
+  font-family: MushafFont;
+}
+
+/* Button */
+.custom-button {
+  width: 82px;
+  height: 40px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #C0BCB4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #45a049;
+}
+
+/* TopPanel */
+.top-panel {
+  min-height: 80px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderComponent = () => {
+const Header = () => {
   const headerStyles = {
     width: "100%",
     height: "60px",
@@ -18,4 +18,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default Header;

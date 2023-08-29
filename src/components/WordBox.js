@@ -1,18 +1,16 @@
 import React from "react";
 
-const WordBox = ({ text }) => {
+const WordBox = (props) => {
 
-  const boxStyles = {
-    width: "fit-content",  
-    height: "fit-content",
-    padding: "2px 12px 2px 4px",
-    borderRadius: "4px",
-    border: "1px solid",
-    background: "#C0BCB4",
-    margin: "4px",  
-  };
-
-  return <div style={boxStyles}>{text}</div>;
+  return (
+    <div className="word-box">
+      <input
+        className="word-input input-styles"
+        type="text"
+        onChange={(e) => props.onInputChange(props.id, e.target.value)}
+      />
+    </div>
+  );
 };
 
 export default WordBox;

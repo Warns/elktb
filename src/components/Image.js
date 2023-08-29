@@ -1,7 +1,7 @@
 import React from "react";
 import yourImage from "../assets/images/1.jpg";
 
-const ImageComponent = () => {
+const Image = () => {
   const imageContainerStyles = {
     position: "relative",
     backgroundColor: "#ECEAE8",
@@ -24,4 +24,4 @@ const ImageComponent = () => {
   );
 };
 
-export default ImageComponent;
+export default Image;
