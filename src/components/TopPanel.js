@@ -2,6 +2,8 @@
 import React from "react";
 import Button from "./Button";
 import { useContentContext } from "./ContentContext"; // Import the useContentContext hook
+import SVGIcon from "./SVGIcon";
+import settingsIcon from "../assets/icons/settings.svg";
 
 const TopPanel = () => {
   const { userInputData, handleWordInputChange } = useContentContext();
@@ -16,8 +18,10 @@ const TopPanel = () => {
   };;
 
   return (
-    <div className="top-panel">
+    <div className="top-panel extend-width-button">
       <Button label="Kaydet" onClick={handleSave}></Button>
+      <Button label="Kontrole Gonder" onClick={() => console.log("Kontrole Gonder button clicked")} />
+      <SVGIcon icon={settingsIcon} onClick={() => console.log("Settings button clicked")} />
     </div>
   );
 };

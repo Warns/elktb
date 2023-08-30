@@ -50,7 +50,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 0 9px;
   margin-bottom: 10px;
 }
 
@@ -64,41 +63,79 @@ header {
 
 /* WordBox */
 .word-box {
-  width: 68px;
   height: 36px;
   border-radius: 4px;
-  border: 1px solid #c0bcb4;
+  border: 1px solid #CDCAC4;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #c0bcb4;
+  background: #CDCAC4;
+  transition: background-color 0.1s, border-color 0.1s 
+}
+
+.word-box:focus-within {
+  background: white;
+  border-color: #cdcac4;
+  color: black;
+  position: relative;
+}
+
+.word-box.has-text {
+  background: white;
+  border-color: #cdcac4;
 }
 
 .word-input {
   width: 70%;
   border: none;
   outline: none;
-  text-align: center;
-  background: #c0bcb4;
+  text-align: right;
+  background: transparent;
+  transition: background-color 0.1s;
+}
+
+.word-box.has-text .word-input {
+  background: white;
+}
+
+.word-box:focus-within .word-input {
+  background: white; 
 }
 
 .input-styles {
   width: 70%;
   border: none;
   outline: none;
+  background: #CDCAC4;
   text-align: center;
-  background: #C0BCB4;
   font-family: MushafFont;
+  font-size: 16px;
+}
+
+.word-box-container {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+}
+
+.separator .svg-icon {
+  width: 6px;
+  height: 16px;
+  object-fit: contain;
+  fill: red;
 }
 
 /* Button */
 .custom-button {
-  width: 82px;
   height: 40px;
-  margin-top: 10px;
   padding: 8px 16px;
   background-color: #C0BCB4;
   color: white;
+  font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -111,4 +148,41 @@ header {
 /* TopPanel */
 .top-panel {
   min-height: 80px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }
+
+.extend-width-button {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+/* SVGIcon */
+.svg-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.svg-icon-container {
+  width: 30px; 
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-icon {
+  width: 20px; /* Adjust the size of the SVG icon as needed */
+  height: 20px;
+  object-fit: contain;
+}
+

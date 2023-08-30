@@ -1,25 +1,41 @@
-import React from "react";
-import { useState } from "react"; // Import useState
-import { useContentContext } from "./ContentContext"; // Import the context hook
+import React, { useState } from "react";
+import { useContentContext } from "./ContentContext";
+import SVGIcon from "./SVGIcon";
+import separatorIcon from "../assets/icons/separator.svg";
 
 const WordBox = ({ id, initialText }) => {
   const { handleWordInputChange, userInputData } = useContentContext();
   const wordData = userInputData.find((data) => data.id === id);
-  const [text, setText] = useState(wordData.userInput || ""); // Initialize with userInput if available
+  const [text, setText] = useState(wordData.userInput || "");
 
   const handleInputChange = (newText) => {
     setText(newText);
-    handleWordInputChange(id, newText); // Update the context with new text
+    handleWordInputChange(id, newText);
   };
 
+  const handleSeparatorClick = () => {
+    // Perform the action when separator is clicked
+    // You can add your logic here
+  };
+
+  let calculatedWidth = 68 + (text.length - 6) * 8;
+  calculatedWidth = Math.min(124, calculatedWidth);
+  calculatedWidth = Math.max(68, calculatedWidth);
+
   return (
-    <div className="word-box">
-      <input
-        className="word-input input-styles"
-        type="text"
-        value={text}
-        onChange={(e) => handleInputChange(e.target.value)}
-      />
+    <div className="word-box-container">
+      <div className="separator" onClick={handleSeparatorClick}>
+        <SVGIcon icon={separatorIcon} color="red" />
+      </div>
+      <div className={`word-box ${text ? "has-text" : ""}`} style={{ width: `${calculatedWidth}px` }}>
+        <input
+          className={`word-input input-styles ${text ? "has-text" : ""}`}
+          type="text"
+          value={text}
+          onChange={(e) => handleInputChange(e.target.value)}
+          tabIndex="1" // Set a tabindex value
+        />
+      </div>
     </div>
   );
 };
