@@ -29,7 +29,7 @@ header {
   flex: 1;
 }
 
-/* WordsComponent */
+/* WordsGrid */
 .words-container {
   position: relative;
   background-color: #ffffff;

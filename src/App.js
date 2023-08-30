@@ -5,21 +5,23 @@ import Header from "./components/Header";
 import Image from "./components/Image";
 import WordsGrid from "./components/WordsGrid";
 import TopPanel from "./components/TopPanel";
+import { ContentProvider } from "./components/ContentContext"; // Import the ContentProvider
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="wrapper">
-        <div className="top-panel">
+    <ContentProvider>
+      <div className="App">
+        <Header />
+        <div className="wrapper">
           <TopPanel />
-        </div>
-        <div className="content-container">
-          <Image />
-          <WordsGrid />
+
+          <div className="content-container">
+            <Image />
+            <WordsGrid />
+          </div>
         </div>
       </div>
-    </div>
+    </ContentProvider>
   );
 }
 

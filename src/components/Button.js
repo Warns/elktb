@@ -1,13 +1,11 @@
-// TopPanel.js
 import React from "react";
-import Button from "./Button";
 
-const TopPanel = ({ onSave }) => {
+const Button = ({ label, onClick }) => {
   return (
-    <div className="top-panel">
-      <Button label="Kaydet" onClick={onSave} />
-    </div>
+    <button className="custom-button" onClick={onClick}>
+      {label}
+    </button>
   );
 };
 
-export default TopPanel;
+export default Button;
