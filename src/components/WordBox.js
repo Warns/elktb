@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useContentContext } from "./ContentContext";
 import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
+import threeDotsIcon from "../assets/icons/three_dots.svg"; 
+
 
 const WordBox = ({ id, initialText }) => {
   const { handleWordInputChange, userInputData } = useContentContext();
@@ -18,6 +20,11 @@ const WordBox = ({ id, initialText }) => {
     // You can add your logic here
   };
 
+  const handleThreeDotsClick = () => {
+    // Perform the action when separator is clicked
+    // You can add your logic here
+  };
+
   let calculatedWidth = 68 + (text.length - 6) * 8;
   calculatedWidth = Math.min(124, calculatedWidth);
   calculatedWidth = Math.max(68, calculatedWidth);
@@ -25,8 +32,11 @@ const WordBox = ({ id, initialText }) => {
   return (
     <div className="word-box-container">
       <div className="separator" onClick={handleSeparatorClick}>
-        <SVGIcon icon={separatorIcon} color="red" />
+        <SVGIcon icon={separatorIcon} />
       </div>
+    <div className="three-dots" onClick={handleThreeDotsClick}>
+      <SVGIcon icon={threeDotsIcon} />
+    </div>
       <div className={`word-box ${text ? "has-text" : ""}`} style={{ width: `${calculatedWidth}px` }}>
         <input
           className={`word-input input-styles ${text ? "has-text" : ""}`}
