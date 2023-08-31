@@ -90,7 +90,7 @@ header {
 
 /* WordBox */
 .word-box {
-  height: 36px;
+  height: 40px;
   border-radius: 4px;
   border: 1px solid #CDCAC4;
   display: flex;
