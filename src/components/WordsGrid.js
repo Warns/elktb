@@ -1,9 +1,9 @@
 import React from "react";
 import WordBox from "./WordBox";
-import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
+import { useContentContext } from "./ContentContext"; // Import the UseUserInputData hook
 
 const WordsGrid = () => {
-  const { userInputData } = UseUserInputData(); // Use the UseUserInputData hook
+  const { userInputData } = useContentContext(); // Use the UseUserInputData hook
 
   const lines = [];
   const uniqueLineValues = {}; // Store unique line values

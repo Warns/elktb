@@ -1,18 +1,18 @@
 import React from "react";
 import Button from "./Button";
-import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
+import { useContentContext } from "./ContentContext"; // Import the UseUserInputData hook
 import SVGIcon from "./SVGIcon";
 import settingsIcon from "../assets/icons/settings.svg";
 
 const TopPanel = () => {
-  const { userInputData, handleWordInputChange } = UseUserInputData(); // Use the UseUserInputData hook
+  const { userInputData, handleWordInputChange } = useContentContext();
 
   const handleSave = () => {
     const updatedData = userInputData.map((wordData) => ({
       ...wordData,
       userInput: wordData.userInput || wordData.text, // Use userInput or text
     }));
-    handleWordInputChange(updatedData); // Update the data using the hook
+    handleWordInputChange(updatedData); // Update the data in context
     console.log("Changes saved:", updatedData);
   };
 

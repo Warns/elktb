@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
+import { useContentContext } from "./ContentContext"; // Import the UseUserInputData hook
 import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
-import threeDotsIcon from "../assets/icons/three_dots.svg";
+import threeDotsIcon from "../assets/icons/three_dots.svg"; 
+
 
 const WordBox = ({ id, initialText }) => {
-  const { handleWordInputChange, userInputData } = UseUserInputData(); // Use the UseUserInputData hook
+  const { handleWordInputChange, userInputData } = useContentContext();
   const wordData = userInputData.find((data) => data.id === id);
-  const [text, setText] = useState(wordData ? wordData.userInput || "" : ""); // Check if wordData exists
+  const [text, setText] = useState(wordData.userInput || "");
 
   const handleInputChange = (newText) => {
     setText(newText);
@@ -15,12 +16,12 @@ const WordBox = ({ id, initialText }) => {
   };
 
   const handleSeparatorClick = () => {
-    // Perform the action when the separator is clicked
+    // Perform the action when separator is clicked
     // You can add your logic here
   };
 
   const handleThreeDotsClick = () => {
-    // Perform the action when the three dots are clicked
+    // Perform the action when separator is clicked
     // You can add your logic here
   };
 
@@ -33,9 +34,9 @@ const WordBox = ({ id, initialText }) => {
       <div className="separator" onClick={handleSeparatorClick}>
         <SVGIcon icon={separatorIcon} />
       </div>
-      <div className="three-dots" onClick={handleThreeDotsClick}>
-        <SVGIcon icon={threeDotsIcon} />
-      </div>
+    <div className="three-dots" onClick={handleThreeDotsClick}>
+      <SVGIcon icon={threeDotsIcon} />
+    </div>
       <div className={`word-box ${text ? "has-text" : ""}`} style={{ width: `${calculatedWidth}px` }}>
         <input
           className={`word-input input-styles ${text ? "has-text" : ""}`}
