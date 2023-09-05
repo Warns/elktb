@@ -4,14 +4,13 @@ import { UseUserInputData } from "./UseUserInputData";
 const ContentContext = createContext();
 
 export const ContentProvider = ({ children }) => {
-  const { userInputData, saveChanges, handleWordInputChange } =
-  UseUserInputData();
+  const { userInputData, saveChanges, handleWordInputChange } = UseUserInputData();
 
   return (
-    <ContentContext.Provider
-      value={{ userInputData, saveChanges, handleWordInputChange }}
-    >
+    <ContentContext.Provider value={{ userInputData, saveChanges, handleWordInputChange }}>
       {children}
     </ContentContext.Provider>
   );
 };
+
+export {ContentContext};

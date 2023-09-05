@@ -1,9 +1,9 @@
 import React from "react";
 import WordBox from "./WordBox";
-import { UseUserInputData } from "./UseUserInputData";
+import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
 
 const WordsGrid = () => {
-  const { userInputData } = UseUserInputData();
+  const { userInputData } = UseUserInputData(); // Use the UseUserInputData hook
 
   const lines = [];
   const uniqueLineValues = {}; // Store unique line values
@@ -22,7 +22,10 @@ const WordsGrid = () => {
     lines[lineIndex].push(
       <div key={`container-${wordData.id}`} className="line-container">
         <div className="script-text">{wordData.script}</div>
-        <WordBox id={wordData.id} initialText={wordData.userInput || ""} />
+        <WordBox
+          id={wordData.id}
+          initialText={wordData.userInput || wordData.text}
+        />
       </div>
     );
   });

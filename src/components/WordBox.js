@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { UseUserInputData } from "./UseUserInputData"; // Import the context hook
+import React, { useState } from "react";
+import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
 import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
 import threeDotsIcon from "../assets/icons/three_dots.svg";
 
-const WordBox = ({ id, initialText, newEntry }) => {
-  const { handleWordInputChange, userInputData } = UseUserInputData(); // Use the context hook
+const WordBox = ({ id, initialText }) => {
+  const { handleWordInputChange, userInputData } = UseUserInputData(); // Use the UseUserInputData hook
   const wordData = userInputData.find((data) => data.id === id);
-
-  // Initialize the text state with the "newEntry" prop if it exists, or the "userInput" from context, or an empty string
-  const [text, setText] = useState(newEntry || (wordData ? wordData.userInput : ""));
-
-  useEffect(() => {
-    // Update the text state when "newEntry" changes (e.g., when the user saves changes)
-    setText(newEntry || (wordData ? wordData.userInput : ""));
-  }, [newEntry, wordData]);
+  const [text, setText] = useState(wordData ? wordData.userInput || "" : ""); // Check if wordData exists
 
   const handleInputChange = (newText) => {
     setText(newText);
@@ -31,8 +24,9 @@ const WordBox = ({ id, initialText, newEntry }) => {
     // You can add your logic here
   };
 
-  // Check if text is defined before accessing its length property
-  const calculatedWidth = text ? 68 + (text.length - 6) * 8 : 68;
+  let calculatedWidth = 68 + (text.length - 6) * 8;
+  calculatedWidth = Math.min(124, calculatedWidth);
+  calculatedWidth = Math.max(68, calculatedWidth);
 
   return (
     <div className="word-box-container">
@@ -48,7 +42,7 @@ const WordBox = ({ id, initialText, newEntry }) => {
           type="text"
           value={text}
           onChange={(e) => handleInputChange(e.target.value)}
-          tabIndex="1"
+          tabIndex="1" // Set a tabindex value
         />
       </div>
     </div>

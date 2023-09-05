@@ -1,36 +1,26 @@
 import React from "react";
 import Button from "./Button";
-import { UseUserInputData } from "./UseUserInputData";
+import { UseUserInputData } from "./UseUserInputData"; // Import the UseUserInputData hook
 import SVGIcon from "./SVGIcon";
 import settingsIcon from "../assets/icons/settings.svg";
 
 const TopPanel = () => {
-  const { userInputData, saveChanges } = UseUserInputData(); // Use saveChanges function
+  const { userInputData, handleWordInputChange } = UseUserInputData(); // Use the UseUserInputData hook
 
   const handleSave = () => {
-    console.log("Before update:", userInputData); // Log the current state
-
     const updatedData = userInputData.map((wordData) => ({
       ...wordData,
-      // Use the user's input or keep it empty if no input provided
-      userInput: wordData.userInput || "",
+      userInput: wordData.userInput || wordData.text, // Use userInput or text
     }));
-    saveChanges(updatedData); // Update the data using saveChanges
-    console.log("After update:", updatedData); // Log the updated state
+    handleWordInputChange(updatedData); // Update the data using the hook
     console.log("Changes saved:", updatedData);
-};
+  };
 
   return (
     <div className="top-panel extend-width-button">
       <Button label="Kaydet" onClick={handleSave}></Button>
-      <Button
-        label="Kontrole Gonder"
-        onClick={() => console.log("Kontrole Gonder button clicked")}
-      />
-      <SVGIcon
-        icon={settingsIcon}
-        onClick={() => console.log("Settings button clicked")}
-      />
+      <Button label="Kontrole Gonder" onClick={() => console.log("Kontrole Gonder button clicked")} />
+      <SVGIcon icon={settingsIcon} onClick={() => console.log("Settings button clicked")} />
     </div>
   );
 };
