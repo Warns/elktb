@@ -1,27 +1,36 @@
-// TopPanel.js
 import React from "react";
 import Button from "./Button";
-import { useContentContext } from "./ContentContext"; // Import the useContentContext hook
+import { UseUserInputData } from "./UseUserInputData";
 import SVGIcon from "./SVGIcon";
 import settingsIcon from "../assets/icons/settings.svg";
 
 const TopPanel = () => {
-  const { userInputData, handleWordInputChange } = useContentContext();
+  const { userInputData, saveChanges } = UseUserInputData(); // Use saveChanges function
 
   const handleSave = () => {
+    console.log("Before update:", userInputData); // Log the current state
+
     const updatedData = userInputData.map((wordData) => ({
       ...wordData,
-      userInput: wordData.userInput || wordData.text, // Use userInput or text
+      // Use the user's input or keep it empty if no input provided
+      userInput: wordData.userInput || "",
     }));
-    handleWordInputChange(updatedData); // Update the data in context
+    saveChanges(updatedData); // Update the data using saveChanges
+    console.log("After update:", updatedData); // Log the updated state
     console.log("Changes saved:", updatedData);
-  };;
+};
 
   return (
     <div className="top-panel extend-width-button">
       <Button label="Kaydet" onClick={handleSave}></Button>
-      <Button label="Kontrole Gonder" onClick={() => console.log("Kontrole Gonder button clicked")} />
-      <SVGIcon icon={settingsIcon} onClick={() => console.log("Settings button clicked")} />
+      <Button
+        label="Kontrole Gonder"
+        onClick={() => console.log("Kontrole Gonder button clicked")}
+      />
+      <SVGIcon
+        icon={settingsIcon}
+        onClick={() => console.log("Settings button clicked")}
+      />
     </div>
   );
 };
