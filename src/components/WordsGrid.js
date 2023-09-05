@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import WordBox from "./WordBox";
-import { useContentContext } from "./ContentContext";
+import { ContentContext } from "./ContentContext";
 
 const WordsGrid = () => {
-  const { userInputData } = useContentContext();
+  const { state } = useContext(ContentContext);
+  console.log("Context State in WordsGrid:", state);
+
+  if (!state || !state.userInputData) {
+    return null; // or some loading indicator
+  }
 
   const lines = [];
-  const uniqueLineValues = {}; // Store unique line values
+  const uniqueLineValues = {};
 
-  userInputData.forEach((wordData) => {
+  state.userInputData.forEach((wordData) => {
     const lineIndex = wordData.line - 1;
 
     if (!lines[lineIndex]) {
@@ -16,7 +21,7 @@ const WordsGrid = () => {
     }
 
     if (!uniqueLineValues[wordData.line]) {
-      uniqueLineValues[wordData.line] = wordData.line; // Store unique line value
+      uniqueLineValues[wordData.line] = wordData.line;
     }
 
     lines[lineIndex].push(

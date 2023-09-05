@@ -14,7 +14,6 @@ function App() {
         <Header />
         <div className="wrapper">
           <TopPanel />
-
           <div className="content-container">
             <Image />
             <WordsGrid />

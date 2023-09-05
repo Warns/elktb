@@ -180,10 +180,6 @@ header {
   cursor: pointer;
 }
 
-.custom-button:hover {
-  background-color: #45a049;
-}
-
 /* TopPanel */
 .top-panel {
   min-height: 80px;

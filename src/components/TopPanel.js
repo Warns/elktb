@@ -1,21 +1,25 @@
-// TopPanel.js
-import React from "react";
+import React, { useContext } from "react";
 import Button from "./Button";
-import { useContentContext } from "./ContentContext"; // Import the useContentContext hook
+import { ContentContext } from "./ContentContext";
 import SVGIcon from "./SVGIcon";
 import settingsIcon from "../assets/icons/settings.svg";
 
 const TopPanel = () => {
-  const { userInputData, handleWordInputChange } = useContentContext();
+  const { state, dispatch } = useContext(ContentContext); // Access state and dispatch from the context
 
   const handleSave = () => {
+    const userInputData = state.userInputData;
+
     const updatedData = userInputData.map((wordData) => ({
       ...wordData,
       userInput: wordData.userInput || wordData.text, // Use userInput or text
     }));
-    handleWordInputChange(updatedData); // Update the data in context
+
+    // Dispatch an action to update the data in context
+    dispatch({ type: "UPDATE_USER_INPUT", payload: updatedData });
+
     console.log("Changes saved:", updatedData);
-  };;
+  };
 
   return (
     <div className="top-panel extend-width-button">
