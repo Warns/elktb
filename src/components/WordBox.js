@@ -5,7 +5,8 @@ import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
 import threeDotsIcon from "../assets/icons/three_dots.svg"; 
 
-const WordBox = ({ id }) => {
+const WordBox = ({ id, initialText }) => {
+  
   const dispatch = useDispatch();
 
   const text = useSelector((state) => {

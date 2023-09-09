@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Image from "./components/Image";
 import WordsGrid from "./components/WordsGrid";
 import TopPanel from "./components/TopPanel";
-import FetchData from "./components/FetchData"; // Import the DataFetcher component
+import DataFetcher from "./components/DataFetcher"; // Import the DataFetcher component
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
 
         <div className="content-container">
           <Image />
+          <DataFetcher />
           <WordsGrid />
-          <FetchData /> 
         </div>
       </div>
     </div>

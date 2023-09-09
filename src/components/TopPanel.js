@@ -12,7 +12,7 @@ const TopPanel = () => {
   const handleSave = () => {
     const updatedData = userInputData.map((wordData) => ({
       ...wordData,
-      userInput: wordData.userInput || wordData.text,
+      userInput: wordData.userInput || "",
     }));
     dispatch(setUserInput(updatedData));
     console.log("Changes saved:", updatedData);
