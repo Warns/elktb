@@ -1,12 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import WordBox from "./WordBox";
-import { useContentContext } from "./ContentContext";
 
 const WordsGrid = () => {
-  const { userInputData } = useContentContext();
+  const userInputData = useSelector((state) => state.userInput);
 
   const lines = [];
-  const uniqueLineValues = {}; // Store unique line values
+  const uniqueLineValues = {};
 
   userInputData.forEach((wordData) => {
     const lineIndex = wordData.line - 1;
@@ -16,7 +16,7 @@ const WordsGrid = () => {
     }
 
     if (!uniqueLineValues[wordData.line]) {
-      uniqueLineValues[wordData.line] = wordData.line; // Store unique line value
+      uniqueLineValues[wordData.line] = wordData.line;
     }
 
     lines[lineIndex].push(

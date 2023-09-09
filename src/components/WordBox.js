@@ -1,20 +1,22 @@
-import React, { useState } from "react";
-import { useContentContext } from "./ContentContext";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setUserInput } from "../redux/slices/userInputSlice";
 import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
 import threeDotsIcon from "../assets/icons/three_dots.svg"; 
 
+const WordBox = ({ id }) => {
+  const dispatch = useDispatch();
 
-const WordBox = ({ id, initialText }) => {
-  const { handleWordInputChange, userInputData } = useContentContext();
-  const wordData = userInputData.find((data) => data.id === id);
-  const [text, setText] = useState(wordData.userInput || "");
+  const text = useSelector((state) => {
+    const wordData = state.userInput.find((data) => data.id === id);
+    return wordData ? wordData.userInput || "" : "";
+  });
 
   const handleInputChange = (newText) => {
-    setText(newText);
-    handleWordInputChange(id, newText);
+    dispatch(setUserInput({ id, userInput: newText }));
   };
-
+  
   const handleSeparatorClick = () => {
     // Perform the action when separator is clicked
     // You can add your logic here
@@ -34,16 +36,16 @@ const WordBox = ({ id, initialText }) => {
       <div className="separator" onClick={handleSeparatorClick}>
         <SVGIcon icon={separatorIcon} />
       </div>
-    <div className="three-dots" onClick={handleThreeDotsClick}>
-      <SVGIcon icon={threeDotsIcon} />
-    </div>
+      <div className="three-dots" onClick={handleThreeDotsClick}>
+        <SVGIcon icon={threeDotsIcon} />
+      </div>
       <div className={`word-box ${text ? "has-text" : ""}`} style={{ width: `${calculatedWidth}px` }}>
         <input
           className={`word-input input-styles ${text ? "has-text" : ""}`}
           type="text"
           value={text}
           onChange={(e) => handleInputChange(e.target.value)}
-          tabIndex="1" // Set a tabindex value
+          tabIndex="1"
         />
       </div>
     </div>

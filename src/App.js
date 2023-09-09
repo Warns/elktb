@@ -5,23 +5,22 @@ import Header from "./components/Header";
 import Image from "./components/Image";
 import WordsGrid from "./components/WordsGrid";
 import TopPanel from "./components/TopPanel";
-import { ContentProvider } from "./components/ContentContext"; // Import the ContentProvider
+import FetchData from "./components/FetchData"; // Import the DataFetcher component
 
 function App() {
   return (
-    <ContentProvider>
-      <div className="App">
-        <Header />
-        <div className="wrapper">
-          <TopPanel />
+    <div className="App">
+      <Header />
+      <div className="wrapper">
+        <TopPanel />
 
-          <div className="content-container">
-            <Image />
-            <WordsGrid />
-          </div>
+        <div className="content-container">
+          <Image />
+          <WordsGrid />
+          <FetchData /> 
         </div>
       </div>
-    </ContentProvider>
+    </div>
   );
 }
 
