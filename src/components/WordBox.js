@@ -5,6 +5,8 @@ import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
 import threeDotsIcon from "../assets/icons/three_dots.svg"; 
 import { setUnsavedChanges } from "../redux/slices/unsavedChangesSlice";
+import { cloneWordData } from "../redux/slices/userInputSlice";
+
 
 const WordBox = ({ id, initialText }) => {
   
@@ -27,8 +29,7 @@ const WordBox = ({ id, initialText }) => {
   };
 
   const handleThreeDotsClick = () => {
-    // Perform the action when separator is clicked
-    // You can add your logic here
+    dispatch(cloneWordData(id));
   };
 
   let calculatedWidth = 68 + (text.length - 6) * 8;
