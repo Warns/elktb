@@ -9,7 +9,7 @@ const DataFetcher = () => {
 
   useEffect(() => {
     // Fetch data from the API when the component mounts
-    fetch("https://json.extendsclass.com/bin/29bcd51aa066")
+    fetch("https://json.extendsclass.com/bin/0df4b69323bc")
       .then((response) => response.json())
       .then((data) => {
         dispatch(setUserInput(data)); // Dispatch action to set user input data

@@ -1,113 +1,110 @@
 [
-    {
-      "text": "b(i)smi",
-      "script": "بسم",
-      "id": "1",
-      "diff": false,
-      "page": 1,
-      "line": 1,
-      "sequence": 1,
-      "userInput": ""
-    },
-    {
-      "text": "(a)llahi",
-      "script": "الله",
-      "id": "2",
-      "diff": false,
-      "page": 1,
-      "line": 1,
-      "sequence": 2,
-      "userInput": ""
-    },
-    {
-      "text": "r-rahmani",
-      "script": "الرحمن",
-      "id": "3",
-      "diff": false,
-      "page": 1,
-      "line": 1,
-      "sequence": 3,
-      "userInput": ""
-    },
-    {
-      "text": "r-rahimi",
-      "script": "الرحيم",
-      "id": "4_1",
-      "diff": false,
-      "page": 1,
-      "line": 1,
-      "sequence": 4,
-      "userInput": ""
-    },
-    {
-      "text": "r-rahimi",
-      "script": "الرحيم",
-      "id": "4_2",
-      "diff": false,
-      "page": 1,
-      "line": 2,
-      "sequence": 1,
-      "userInput": ""
-    },
-    {
-      "text": "l-hamdu",
-      "script": "الحمد",
-      "id": "5",
-      "diff": false,
-      "page": 1,
-      "line": 2,
-      "sequence": 2,
-      "userInput": ""
-    },
-    {
-      "text": "li(a)llahi",
-      "script": "لله",
-      "id": "6",
-      "diff": false,
-      "page": 1,
-      "line": 2,
-      "sequence": 3,
-      "userInput": ""
-    },
-    {
-      "text": "rabbi",
-      "script": "رب",
-      "id": "7",
-      "diff": false,
-      "page": 1,
-      "line": 2,
-      "sequence": 4,
-      "userInput": ""
-    },
-    {
-      "text": "l-aalemine",
-      "script": "العلمين",
-      "id": "8",
-      "diff": true,
-      "page": 1,
-      "line": 3,
-      "sequence": 1,
-      "userInput": ""
-    },
-    {
-      "text": "r-rahmani",
-      "script": "الرحمن",
-      "id": "9",
-      "diff": false,
-      "page": 1,
-      "line": 3,
-      "sequence": 2,
-      "userInput": ""
-    },
-    {
-      "text": "r-rahimi",
-      "script": "الرحبم",
-      "id": "10",
-      "diff": false,
-      "page": 1,
-      "line": 3,
-      "sequence": 3,
-      "userInput": ""
-    }
-  ]
- 
+  {
+    "text": "b(i)smi",
+    "script": "بسم",
+    "id": "1",
+    "diff": false,
+    "page": 1,
+    "line": 1,
+    "sequence": 1
+  },
+  {
+    "text": "(a)llahi",
+    "script": "الله",
+    "id": "2",
+    "diff": false,
+    "page": 1,
+    "line": 1,
+    "sequence": 2
+  },
+  {
+    "text": "r-rahmani",
+    "script": "الرحمن",
+    "id": "3",
+    "diff": false,
+    "page": 1,
+    "line": 1,
+    "sequence": 3
+  },
+  {
+    "text": "r-rahimi",
+    "script": "الرحيم",
+    "id": "4",
+    "diff": false,
+    "page": 1,
+    "line": 1,
+    "sequence": 4
+  },
+  {
+    "text": "l-hamdu",
+    "script": "الحمد",
+    "id": "5",
+    "diff": false,
+    "page": 1,
+    "line": 2,
+    "sequence": 1
+  },
+  {
+    "text": "li(a)llahi",
+    "script": "لله",
+    "id": "6",
+    "diff": false,
+    "page": 1,
+    "line": 2,
+    "sequence": 2
+  },
+  {
+    "text": "rabbi",
+    "script": "رب",
+    "id": "7",
+    "diff": false,
+    "page": 1,
+    "line": 2,
+    "sequence": 3
+  },
+  {
+    "text": "l-aalemine",
+    "script": "العلمين",
+    "id": "8",
+    "diff": true,
+    "page": 1,
+    "line": 2,
+    "sequence": 4
+  },
+  {
+    "text": "r-rahmani",
+    "script": "الرحمن",
+    "id": "9",
+    "diff": false,
+    "page": 1,
+    "line": 3,
+    "sequence": 1
+  },
+  {
+    "text": "r-rahimi",
+    "script": "الرحبم",
+    "id": "10",
+    "diff": false,
+    "page": 1,
+    "line": 3,
+    "sequence": 2
+  },
+  {
+    "text": "maliki",
+    "script": "مالك",
+    "id": "11",
+    "diff": true,
+    "page": 1,
+    "line": 3,
+    "sequence": 3
+  },
+  {
+    "text": "yevmi",
+    "script": "يوم",
+    "id": "12",
+    "diff": false,
+    "page": 1,
+    "line": 3,
+    "sequence": 4
+  }
+]

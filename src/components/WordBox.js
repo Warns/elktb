@@ -4,6 +4,7 @@ import { setUserInput } from "../redux/slices/userInputSlice";
 import SVGIcon from "./SVGIcon";
 import separatorIcon from "../assets/icons/separator.svg";
 import threeDotsIcon from "../assets/icons/three_dots.svg"; 
+import { setUnsavedChanges } from "../redux/slices/unsavedChangesSlice";
 
 const WordBox = ({ id, initialText }) => {
   
@@ -16,6 +17,8 @@ const WordBox = ({ id, initialText }) => {
 
   const handleInputChange = (newText) => {
     dispatch(setUserInput({ id, userInput: newText }));
+
+    dispatch(setUnsavedChanges()); // Add this line
   };
   
   const handleSeparatorClick = () => {
