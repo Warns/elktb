@@ -1,19 +1,10 @@
 import React from "react";
+import "../App.css";
 
 const Header = () => {
-  const headerStyles = {
-    width: "100%",
-    height: "60px",
-    backgroundColor: "blue",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    zIndex: 1000,
-  };
-
   return (
     <header>
-      <div style={headerStyles}></div>
+      <div className="menu"></div>
     </header>
   );
 };
